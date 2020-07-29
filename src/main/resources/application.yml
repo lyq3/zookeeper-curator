@@ -1,0 +1,13 @@
+server:
+  port: 8585
+spring:
+  application:
+    name: zookeeper-curator
+
+curator:
+  address: 192.168.0.241:2181,192.168.0.243:2181,192.168.0.242:2181
+  timeout:  5000 #连接超时时间
+  sessionTimeout: 60000 # Session 超时时间
+  retryCount: 10  # 重试次数
+  retryElapsedTime: 3000 # 重试间隔时间
+
