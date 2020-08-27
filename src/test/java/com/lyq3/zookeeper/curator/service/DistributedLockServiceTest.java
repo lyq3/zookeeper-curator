@@ -37,4 +37,20 @@ public class DistributedLockServiceTest extends BaseTest {
     }
 
 
+    @Test
+    public void testInterProcessSemaphoreMutex() throws IOException {
+        for (int i = 0; i < 10; i++) {
+            new Thread(() -> {
+                try {
+                    distributedLockService.interProcessSemaphoreMutex();
+                } catch (Exception e) {
+                    e.printStackTrace();
+                }
+            }).start();
+        }
+
+        System.in.read();
+    }
+
+
 }
